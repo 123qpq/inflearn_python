@@ -1,6 +1,9 @@
 n = int(input())
 nums = list(input().split())
-sums = []
+maxsum = 0
 for num in nums:
-    sums.append(sum(map(int, list(num))))
-print(nums[sums.index(max(sums))])
+    newsum = sum(map(int, list(num)))
+    if  newsum > maxsum:
+        maxsum = newsum
+        res = num
+print(res)
