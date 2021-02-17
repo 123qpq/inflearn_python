@@ -7,10 +7,10 @@ lt = 0
 rt = n-1
 while lt <= rt:
     mid = (lt + rt) // 2
-    if a[mid] == m:
+    if nums[mid] == m:
         print(mid+1)
         break
-    elif a[mid] > m:
+    elif nums[mid] > m:
         rt = mid - 1
     else:
         lt = mid + 1
