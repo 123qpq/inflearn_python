@@ -2,8 +2,7 @@ n = int(input())
 boxes = list(map(int, input().split()))
 m = int(input())
 for _ in range(m):
-    minbox = boxes.index(min(boxes))
-    maxbox = boxes.index(max(boxes))
-    boxes[minbox] += 1
-    boxes[maxbox] -= 1
-print(max(boxes) - min(boxes))
+    boxes.sort()
+    boxes[0] += 1
+    boxes[-1] -= 1
+print(boxes[-1] - boxes[0])
