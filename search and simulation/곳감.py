@@ -8,10 +8,11 @@ for _ in range(m):
     row, direc, rot = map(int, input().split())
     rot %= n
     if direc: #오른쪽
-        table[row-1] = table[row-1][n - rot:] + table[row-1][:n - rot]
+        for _ in range(rot):
+            table[row-1].insert(0, table[row-1].pop())
     else: #왼쪽
-        table[row-1] = table[row-1][rot:] + table[row-1][:rot]
-    #print(table)
+        for _ in range(rot):
+            table[row-1].append(table[row-1].pop(0))
 
 for i in range(n//2):
     res += sum(table[i][i:n-i])
