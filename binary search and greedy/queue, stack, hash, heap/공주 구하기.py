@@ -1,11 +1,11 @@
-from collections import  deque
 n, k = map(int, input().split())
-princes = list(range(1, n+1))
-dq = deque(princes)
-
-while len(dq) != 1:
-    for _ in range(k-1):
-        cur = dq.popleft()
-        dq.append(cur)
-    dq.popleft()
-print(dq[0])
+princes = [i+1 for i in range(n)]
+idx = k
+for _ in range(n-1):
+    princes.pop(idx-1)
+    if idx == 0:
+        idx += 1
+    idx += k-1
+    idx %= len(princes)
+    
+print(princes[0])
