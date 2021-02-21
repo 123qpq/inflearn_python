@@ -1,9 +1,11 @@
 n = int(input())
-dic = []
+dic = {}
 for _ in range(n):
-    dic.append(input())
+    dic[input()] = 0
 
 for _ in range(n-1):
-    dic.pop(dic.index(input()))
-print(dic[0])
+    dic[input()] += 1
 
+for key, value in dic.items():
+    if value == 0:
+        print(key)
